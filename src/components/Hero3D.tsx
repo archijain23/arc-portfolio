@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float } from '@react-three/drei';
@@ -20,6 +21,27 @@ const FloatingShape = ({ position, color, geometry }: { position: [number, numbe
         <meshStandardMaterial color={color} />
       </mesh>
     </Float>
+  );
+};
+
+const BouncingBasketball = ({ position }: { position: [number, number, number] }) => {
+  const meshRef = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      // Bouncing motion
+      meshRef.current.position.y = position[1] + Math.abs(Math.sin(state.clock.elapsedTime * 3)) * 2;
+      // Slight rotation
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.5;
+      meshRef.current.rotation.z = state.clock.elapsedTime * 0.3;
+    }
+  });
+  
+  return (
+    <mesh ref={meshRef} position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshStandardMaterial color="#D2691E" roughness={0.8} />
+    </mesh>
   );
 };
 
@@ -116,6 +138,15 @@ const Hero3D = () => {
             <button className="px-8 py-4 border-2 border-orange-600 text-orange-600 rounded-full font-semibold hover:bg-orange-600 hover:text-white transition-colors">
               Download CV
             </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Bouncing Basketball Animation */}
+      <div className="absolute bottom-32 right-8 z-20">
+        <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-full animate-bounce shadow-lg">
+          <div className="w-full h-full rounded-full border-2 border-orange-700 flex items-center justify-center">
+            <div className="w-8 h-0.5 bg-orange-700 rounded"></div>
           </div>
         </div>
       </div>

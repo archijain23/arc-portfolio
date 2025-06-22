@@ -23,13 +23,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-orange-900 via-red-900 to-yellow-900 text-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Let's Create Something Amazing Together
           </h2>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-200 max-w-2xl mx-auto">
             Ready to bring your ideas to life? I'd love to hear about your next project.
           </p>
         </div>
@@ -39,7 +39,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-              <p className="text-purple-200 text-lg leading-relaxed mb-8">
+              <p className="text-orange-200 text-lg leading-relaxed mb-8">
                 I'm always excited to work on innovative projects and collaborate with 
                 passionate individuals. Whether you have a project in mind or just want 
                 to connect, feel free to reach out!
@@ -48,39 +48,39 @@ const Contact = () => {
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="font-semibold">Email</p>
-                  <p className="text-purple-200">jainarch023@gmail.com</p>
+                  <p className="text-orange-200">jainarch023@gmail.com</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full flex items-center justify-center">
                   <Linkedin size={20} />
                 </div>
                 <div>
                   <p className="font-semibold">LinkedIn</p>
-                  <p className="text-purple-200">Connect with me professionally</p>
+                  <p className="text-orange-200">Connect with me professionally</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
                   <Github size={20} />
                 </div>
                 <div>
                   <p className="font-semibold">GitHub</p>
-                  <p className="text-purple-200">Check out my code repositories</p>
+                  <p className="text-orange-200">Check out my code repositories</p>
                 </div>
               </div>
             </div>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
               <h4 className="font-bold mb-4">Currently Available For:</h4>
-              <ul className="space-y-2 text-purple-200">
+              <ul className="space-y-2 text-orange-200">
                 <li>• Full-stack development projects</li>
                 <li>• Machine learning collaborations</li>
                 <li>• Open source contributions</li>
@@ -104,7 +104,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-purple-200"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white placeholder-orange-200"
                   placeholder="Enter your name"
                   required
                 />
@@ -120,7 +120,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-purple-200"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white placeholder-orange-200"
                   placeholder="Enter your email"
                   required
                 />
@@ -136,7 +136,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-purple-200 resize-none"
+                  className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-white placeholder-orange-200 resize-none"
                   placeholder="Tell me about your project or just say hello!"
                   required
                 ></textarea>
@@ -144,7 +144,7 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Send Message
               </button>
@@ -153,7 +153,7 @@ const Contact = () => {
         </div>
         
         <div className="text-center mt-16 pt-8 border-t border-white/20">
-          <p className="text-purple-200">
+          <p className="text-orange-200">
             © 2025 Archi Jain. Crafted with passion and creativity.
           </p>
         </div>

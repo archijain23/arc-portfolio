@@ -11,7 +11,7 @@ const Experience = () => {
       type: "Internship",
       description: "Implemented key features like login security, device tracking, payment Gateway (Razorpay), multilingual support and enhanced user interface of the internship portal.",
       skills: ["Fullstack Development", "Payment Integration", "Security Implementation"],
-      color: "from-purple-500 to-pink-500"
+      color: "from-orange-500 to-red-500"
     },
     {
       company: "AICTE Virtual Internship",
@@ -20,7 +20,7 @@ const Experience = () => {
       type: "Virtual Internship",
       description: "Designed and implemented a personal home network using Cisco Packet Tracer, demonstrating foundational knowledge of network architecture and configuration.",
       skills: ["Cyber Security", "Cloud Security", "Cisco Packet Tracer"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-red-500 to-yellow-500"
     },
     {
       company: "AICTE Virtual Internship", 
@@ -29,7 +29,7 @@ const Experience = () => {
       type: "Virtual Internship",
       description: "Gained comprehensive understanding of network architecture and configuration through hands-on training with Cisco Packet Tracer and cybersecurity fundamentals.",
       skills: ["Network Architecture", "Cybersecurity Fundamentals", "System Configuration"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-yellow-500 to-orange-500"
     }
   ];
 
@@ -42,11 +42,11 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
               Experience & Achievements
             </span>
           </h2>
@@ -63,7 +63,7 @@ const Experience = () => {
               {experiences.map((exp, index) => (
                 <div key={index} className="relative">
                   {index !== experiences.length - 1 && (
-                    <div className="absolute left-4 top-16 w-0.5 h-24 bg-gradient-to-b from-purple-300 to-transparent"></div>
+                    <div className="absolute left-4 top-16 w-0.5 h-24 bg-gradient-to-b from-orange-300 to-transparent"></div>
                   )}
                   
                   <div className="flex items-start space-x-6">
@@ -73,9 +73,9 @@ const Experience = () => {
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <h4 className="text-xl font-bold text-gray-800">{exp.role}</h4>
-                          <p className="text-purple-600 font-semibold">{exp.company}</p>
+                          <p className="text-orange-600 font-semibold">{exp.company}</p>
                         </div>
-                        <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">
                           {exp.type}
                         </span>
                       </div>
@@ -91,7 +91,7 @@ const Experience = () => {
                         {exp.skills.map((skill, skillIndex) => (
                           <span
                             key={skillIndex}
-                            className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 rounded-full text-sm font-medium"
                           >
                             {skill}
                           </span>
@@ -118,7 +118,7 @@ const Experience = () => {
               ))}
             </div>
             
-            <div className="mt-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6">
+            <div className="mt-8 bg-gradient-to-r from-orange-100 to-red-100 rounded-xl p-6">
               <h4 className="text-lg font-bold text-gray-800 mb-4">Leadership & Activities</h4>
               <ul className="space-y-2 text-gray-700">
                 <li>• Club Lead - The Thespians Club (College Drama Club)</li>
