@@ -42,15 +42,15 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="experience" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
               Experience & Achievements
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Professional journey and recognition in technology and leadership
           </p>
         </div>
@@ -58,40 +58,40 @@ const Experience = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Experience Timeline */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">Professional Experience</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Professional Experience</h3>
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <div key={index} className="relative">
                   {index !== experiences.length - 1 && (
-                    <div className="absolute left-4 top-16 w-0.5 h-24 bg-gradient-to-b from-blue-300 to-transparent"></div>
+                    <div className="absolute left-4 top-16 w-0.5 h-24 bg-gradient-to-b from-blue-400 to-transparent"></div>
                   )}
                   
                   <div className="flex items-start space-x-6">
                     <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${exp.color} flex-shrink-0 mt-2`}></div>
                     
-                    <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow flex-1">
+                    <div className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow flex-1 border border-gray-700">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <h4 className="text-xl font-bold text-gray-800">{exp.role}</h4>
-                          <p className="text-blue-600 font-semibold">{exp.company}</p>
+                          <h4 className="text-xl font-bold text-white">{exp.role}</h4>
+                          <p className="text-blue-400 font-semibold">{exp.company}</p>
                         </div>
-                        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                        <span className="px-3 py-1 bg-blue-900 text-blue-300 rounded-full text-sm font-medium">
                           {exp.type}
                         </span>
                       </div>
                       
-                      <div className="flex items-center mb-4 text-gray-600">
+                      <div className="flex items-center mb-4 text-gray-400">
                         <Calendar size={16} />
                         <span className="ml-2">{exp.duration}</span>
                       </div>
                       
-                      <p className="text-gray-700 mb-4 leading-relaxed">{exp.description}</p>
+                      <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
                       
                       <div className="flex flex-wrap gap-2">
                         {exp.skills.map((skill, skillIndex) => (
                           <span
                             key={skillIndex}
-                            className="px-3 py-1 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-800 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-gradient-to-r from-blue-900 to-indigo-900 text-blue-300 rounded-full text-sm font-medium"
                           >
                             {skill}
                           </span>
@@ -106,21 +106,21 @@ const Experience = () => {
           
           {/* Achievements */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">Key Achievements</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">Key Achievements</h3>
             <div className="space-y-4">
               {achievements.map((achievement, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <div key={index} className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-700">
                   <div className="flex items-start space-x-4">
                     <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex-shrink-0 mt-1"></div>
-                    <p className="text-gray-700 leading-relaxed">{achievement}</p>
+                    <p className="text-gray-300 leading-relaxed">{achievement}</p>
                   </div>
                 </div>
               ))}
             </div>
             
-            <div className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
-              <h4 className="text-lg font-bold text-gray-800 mb-4">Leadership & Activities</h4>
-              <ul className="space-y-2 text-gray-700">
+            <div className="mt-8 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl p-6 border border-gray-600">
+              <h4 className="text-lg font-bold text-white mb-4">Leadership & Activities</h4>
+              <ul className="space-y-2 text-gray-300">
                 <li>• Club Lead - The Thespians Club (College Drama Club)</li>
                 <li>• Team Lead - Smart India Hackathon (SIH)</li>
                 <li>• World Tourism Day Representative (Egypt-themed exhibit)</li>

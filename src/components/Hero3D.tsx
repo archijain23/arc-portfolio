@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float } from '@react-three/drei';
@@ -83,7 +82,7 @@ const Scene = () => {
 
 const Hero3D = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 6], fov: 75 }}>
           <Scene />
@@ -94,27 +93,27 @@ const Hero3D = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <div className="flex justify-center items-center mb-4 space-x-4">
-            <Target className="text-blue-600" size={48} />
+            <Target className="text-blue-400" size={48} />
             <h1 className="text-6xl md:text-8xl font-bold">
-              <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent">
                 Archi Jain
               </span>
             </h1>
-            <Zap className="text-blue-500" size={48} />
+            <Zap className="text-blue-300" size={48} />
           </div>
-          <p className="text-xl md:text-2xl text-gray-700 mb-4 font-light">
+          <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
             Full-Stack Developer & Basketball Player
           </p>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
             Combining athletic discipline with coding excellence. Passionate about creating innovative web solutions 
             and marine conservation technologies while dominating on the basketball court.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
               <Target size={20} />
               <span>View My Work</span>
             </button>
-            <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+            <button className="px-8 py-4 border-2 border-blue-500 text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-colors">
               Download CV
             </button>
           </div>
