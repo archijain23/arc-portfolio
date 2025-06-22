@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Float, Text3D, Center } from '@react-three/drei';
+import { OrbitControls, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 const FloatingShape = ({ position, color, geometry }: { position: [number, number, number], color: string, geometry: THREE.BufferGeometry }) => {
@@ -17,7 +17,7 @@ const FloatingShape = ({ position, color, geometry }: { position: [number, numbe
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <mesh ref={meshRef} position={position} geometry={geometry}>
-        <materialShader color={color} />
+        <meshStandardMaterial color={color} />
       </mesh>
     </Float>
   );
