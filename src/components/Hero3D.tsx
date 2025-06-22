@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float } from '@react-three/drei';
@@ -9,35 +10,42 @@ const FloatingShape = ({ position, color, geometry }: { position: [number, numbe
   
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2;
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.8) * 0.3;
+      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.6) * 0.4;
+      meshRef.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.4) * 0.2;
     }
   });
   
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <mesh ref={meshRef} position={position} geometry={geometry}>
-        <meshStandardMaterial color={color} />
+        <meshStandardMaterial color={color} metalness={0.3} roughness={0.4} />
       </mesh>
     </Float>
   );
 };
 
-const BasketballSphere = ({ position }: { position: [number, number, number] }) => {
+const CrystalSphere = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.1;
-      meshRef.current.rotation.x = Math.cos(state.clock.elapsedTime * 0.6) * 0.15;
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.5;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.2;
     }
   });
   
   return (
     <Float speed={1.5} rotationIntensity={0.8} floatIntensity={3}>
       <mesh ref={meshRef} position={position}>
-        <sphereGeometry args={[0.8, 32, 32]} />
-        <meshStandardMaterial color="#D2691E" roughness={0.8} />
+        <icosahedronGeometry args={[0.8, 0]} />
+        <meshStandardMaterial 
+          color="#3B82F6" 
+          metalness={0.8} 
+          roughness={0.2} 
+          transparent 
+          opacity={0.8}
+        />
       </mesh>
     </Float>
   );
@@ -47,34 +55,39 @@ const Scene = () => {
   return (
     <>
       <ambientLight intensity={0.6} />
-      <pointLight position={[10, 10, 10]} intensity={1.2} color="#4A90E2" />
-      <pointLight position={[-10, -10, -10]} intensity={0.8} color="#7BB3F0" />
-      <spotLight position={[0, 15, 0]} intensity={1} angle={0.3} penumbra={0.5} color="#A8C8EC" />
+      <pointLight position={[10, 10, 10]} intensity={1.2} color="#3B82F6" />
+      <pointLight position={[-10, -10, -10]} intensity={0.8} color="#60A5FA" />
+      <spotLight position={[0, 15, 0]} intensity={1} angle={0.3} penumbra={0.5} color="#93C5FD" />
       
-      {/* Basketball spheres */}
-      <BasketballSphere position={[-4, 1, -1]} />
-      <BasketballSphere position={[4, -2, 1]} />
+      {/* Crystal spheres */}
+      <CrystalSphere position={[-4, 1, -1]} />
+      <CrystalSphere position={[4, -2, 1]} />
       
-      {/* Sporty geometric shapes with blue colors */}
+      {/* Dynamic geometric shapes */}
       <FloatingShape 
         position={[-2, 3, 0]} 
-        color="#2E5A87" 
+        color="#1E40AF" 
         geometry={new THREE.OctahedronGeometry(0.6)} 
       />
       <FloatingShape 
         position={[3, 2, -2]} 
-        color="#4A90E2" 
+        color="#3B82F6" 
         geometry={new THREE.TetrahedronGeometry(0.7)} 
       />
       <FloatingShape 
         position={[0, -3, 1]} 
-        color="#7BB3F0" 
-        geometry={new THREE.IcosahedronGeometry(0.5)} 
+        color="#60A5FA" 
+        geometry={new THREE.TorusGeometry(0.5, 0.2, 16, 100)} 
       />
       <FloatingShape 
         position={[-3, -1, 2]} 
-        color="#A8C8EC" 
-        geometry={new THREE.DodecahedronGeometry(0.4)} 
+        color="#93C5FD" 
+        geometry={new THREE.ConeGeometry(0.4, 0.8, 8)} 
+      />
+      <FloatingShape 
+        position={[2, 0, -1]} 
+        color="#DBEAFE" 
+        geometry={new THREE.CylinderGeometry(0.3, 0.3, 0.8, 6)} 
       />
     </>
   );
@@ -82,11 +95,11 @@ const Scene = () => {
 
 const Hero3D = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900">
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 6], fov: 75 }}>
           <Scene />
-          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.3} />
+          <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.4} />
         </Canvas>
       </div>
       
@@ -102,11 +115,11 @@ const Hero3D = () => {
             <Zap className="text-blue-300" size={48} />
           </div>
           <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
-            Full-Stack Developer & Basketball Player
+            Full-Stack Developer & Digital Innovator
           </p>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Combining athletic discipline with coding excellence. Passionate about creating innovative web solutions 
-            and marine conservation technologies while dominating on the basketball court.
+            Crafting cutting-edge web solutions with passion and precision. 
+            Combining technical expertise with creative vision to build the future of digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">

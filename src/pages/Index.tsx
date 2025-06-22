@@ -7,13 +7,13 @@ import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Experience from '../components/Experience';
 import Contact from '../components/Contact';
-import ScrollBasketball from '../components/ScrollBasketball';
+import ScrollParticles from '../components/ScrollParticles';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <ScrollBasketball />
+      <ScrollParticles />
       <Hero3D />
       <About />
       <Projects />
