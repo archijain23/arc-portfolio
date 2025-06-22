@@ -1,9 +1,8 @@
-
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float } from '@react-three/drei';
 import * as THREE from 'three';
-import { Basketball, Volleyball } from 'lucide-react';
+import { Target, Zap } from 'lucide-react';
 
 const FloatingShape = ({ position, color, geometry }: { position: [number, number, number], color: string, geometry: THREE.BufferGeometry }) => {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -94,13 +93,13 @@ const Hero3D = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <div className="flex justify-center items-center mb-4 space-x-4">
-            <Basketball className="text-orange-600" size={48} />
+            <Target className="text-orange-600" size={48} />
             <h1 className="text-6xl md:text-8xl font-bold">
               <span className="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">
                 Archi Jain
               </span>
             </h1>
-            <Volleyball className="text-red-600" size={48} />
+            <Zap className="text-red-600" size={48} />
           </div>
           <p className="text-xl md:text-2xl text-gray-700 mb-4 font-light">
             Full-Stack Developer & Basketball Player
@@ -111,7 +110,7 @@ const Hero3D = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-              <Basketball size={20} />
+              <Target size={20} />
               <span>View My Work</span>
             </button>
             <button className="px-8 py-4 border-2 border-orange-600 text-orange-600 rounded-full font-semibold hover:bg-orange-600 hover:text-white transition-colors">
