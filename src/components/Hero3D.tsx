@@ -24,27 +24,6 @@ const FloatingShape = ({ position, color, geometry }: { position: [number, numbe
   );
 };
 
-const BouncingBasketball = ({ position }: { position: [number, number, number] }) => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      // Bouncing motion
-      meshRef.current.position.y = position[1] + Math.abs(Math.sin(state.clock.elapsedTime * 3)) * 2;
-      // Slight rotation
-      meshRef.current.rotation.x = state.clock.elapsedTime * 0.5;
-      meshRef.current.rotation.z = state.clock.elapsedTime * 0.3;
-    }
-  });
-  
-  return (
-    <mesh ref={meshRef} position={position}>
-      <sphereGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial color="#D2691E" roughness={0.8} />
-    </mesh>
-  );
-};
-
 const BasketballSphere = ({ position }: { position: [number, number, number] }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   
@@ -69,33 +48,33 @@ const Scene = () => {
   return (
     <>
       <ambientLight intensity={0.6} />
-      <pointLight position={[10, 10, 10]} intensity={1.2} color="#FFA500" />
-      <pointLight position={[-10, -10, -10]} intensity={0.8} color="#FF6347" />
-      <spotLight position={[0, 15, 0]} intensity={1} angle={0.3} penumbra={0.5} color="#FFD700" />
+      <pointLight position={[10, 10, 10]} intensity={1.2} color="#4A90E2" />
+      <pointLight position={[-10, -10, -10]} intensity={0.8} color="#7BB3F0" />
+      <spotLight position={[0, 15, 0]} intensity={1} angle={0.3} penumbra={0.5} color="#A8C8EC" />
       
       {/* Basketball spheres */}
       <BasketballSphere position={[-4, 1, -1]} />
       <BasketballSphere position={[4, -2, 1]} />
       
-      {/* Sporty geometric shapes */}
+      {/* Sporty geometric shapes with blue colors */}
       <FloatingShape 
         position={[-2, 3, 0]} 
-        color="#FF6347" 
+        color="#2E5A87" 
         geometry={new THREE.OctahedronGeometry(0.6)} 
       />
       <FloatingShape 
         position={[3, 2, -2]} 
-        color="#FFA500" 
+        color="#4A90E2" 
         geometry={new THREE.TetrahedronGeometry(0.7)} 
       />
       <FloatingShape 
         position={[0, -3, 1]} 
-        color="#FFD700" 
+        color="#7BB3F0" 
         geometry={new THREE.IcosahedronGeometry(0.5)} 
       />
       <FloatingShape 
         position={[-3, -1, 2]} 
-        color="#FF4500" 
+        color="#A8C8EC" 
         geometry={new THREE.DodecahedronGeometry(0.4)} 
       />
     </>
@@ -104,7 +83,7 @@ const Scene = () => {
 
 const Hero3D = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 6], fov: 75 }}>
           <Scene />
@@ -115,13 +94,13 @@ const Hero3D = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="animate-fade-in">
           <div className="flex justify-center items-center mb-4 space-x-4">
-            <Target className="text-orange-600" size={48} />
+            <Target className="text-blue-600" size={48} />
             <h1 className="text-6xl md:text-8xl font-bold">
-              <span className="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-800 via-blue-600 to-blue-400 bg-clip-text text-transparent">
                 Archi Jain
               </span>
             </h1>
-            <Zap className="text-red-600" size={48} />
+            <Zap className="text-blue-500" size={48} />
           </div>
           <p className="text-xl md:text-2xl text-gray-700 mb-4 font-light">
             Full-Stack Developer & Basketball Player
@@ -131,29 +110,20 @@ const Hero3D = () => {
             and marine conservation technologies while dominating on the basketball court.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
               <Target size={20} />
               <span>View My Work</span>
             </button>
-            <button className="px-8 py-4 border-2 border-orange-600 text-orange-600 rounded-full font-semibold hover:bg-orange-600 hover:text-white transition-colors">
+            <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-colors">
               Download CV
             </button>
           </div>
         </div>
       </div>
       
-      {/* Bouncing Basketball Animation */}
-      <div className="absolute bottom-32 right-8 z-20">
-        <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-full animate-bounce shadow-lg">
-          <div className="w-full h-full rounded-full border-2 border-orange-700 flex items-center justify-center">
-            <div className="w-8 h-0.5 bg-orange-700 rounded"></div>
-          </div>
-        </div>
-      </div>
-      
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-orange-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-orange-400 rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-blue-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

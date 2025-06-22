@@ -8,7 +8,7 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>
@@ -38,22 +38,22 @@ const About = () => {
           </div>
           
           <div className="grid grid-cols-1 gap-6">
-            <div className="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl">
-              <BookOpen className="text-orange-600 mb-4" size={32} />
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
+              <BookOpen className="text-blue-600 mb-4" size={32} />
               <h3 className="text-xl font-semibold mb-2">Education</h3>
               <p className="text-gray-700">B.Tech in CS & Engineering</p>
               <p className="text-sm text-gray-600">CGPA: 8.18/10</p>
             </div>
             
-            <div className="bg-gradient-to-r from-red-100 to-yellow-100 p-6 rounded-xl">
-              <Award className="text-red-600 mb-4" size={32} />
+            <div className="bg-gradient-to-r from-indigo-50 to-slate-50 p-6 rounded-xl">
+              <Award className="text-indigo-600 mb-4" size={32} />
               <h3 className="text-xl font-semibold mb-2">Achievements</h3>
               <p className="text-gray-700">Multiple Hackathon Finalist</p>
               <p className="text-sm text-gray-600">Patent Holder & Award Winner</p>
             </div>
             
-            <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl">
-              <Users className="text-yellow-600 mb-4" size={32} />
+            <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-xl">
+              <Users className="text-slate-600 mb-4" size={32} />
               <h3 className="text-xl font-semibold mb-2">Leadership</h3>
               <p className="text-gray-700">Team Lead & Club Leader</p>
               <p className="text-sm text-gray-600">Mentor & Community Builder</p>
