@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 
 const ScrollParticles = () => {
@@ -87,12 +88,12 @@ const ScrollParticles = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-10 overflow-hidden" // removed pointer-events-none
+      className="fixed inset-0 z-10 overflow-hidden"
     >
       {balls.map((ball) => (
         <img
           key={ball.id}
-          src="/basketball.png"
+          src="/arc-portfolio/basketball.png"
           alt="Basketball"
           className={`absolute object-contain drop-shadow-lg cursor-pointer ${
             ball.bouncing ? "animate-bounce-pop" : ""

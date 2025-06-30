@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 
 const ScrollBasketball = () => {
@@ -37,7 +38,7 @@ const ScrollBasketball = () => {
             }}
           >
             <img
-              src="/basketball.png" // or your actual image path
+              src="/arc-portfolio/basketball.png"
               alt="Basketball"
               className="w-12 h-12 object-contain"
             />
