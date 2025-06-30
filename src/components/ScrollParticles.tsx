@@ -93,7 +93,7 @@ const ScrollParticles = () => {
       {balls.map((ball) => (
         <img
           key={ball.id}
-          src="/arc-portfolio/basketball.png"
+          src="./basketball.png"
           alt="Basketball"
           className={`absolute object-contain drop-shadow-lg cursor-pointer ${
             ball.bouncing ? "animate-bounce-pop" : ""

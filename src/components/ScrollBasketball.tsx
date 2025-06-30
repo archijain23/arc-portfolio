@@ -38,7 +38,7 @@ const ScrollBasketball = () => {
             }}
           >
             <img
-              src="/arc-portfolio/basketball.png"
+              src="./basketball.png"
               alt="Basketball"
               className="w-12 h-12 object-contain"
             />
