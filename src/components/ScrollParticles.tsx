@@ -85,6 +85,14 @@ const ScrollParticles = () => {
     }, 300);
   };
 
+  // Get the correct image path based on environment
+  const getImagePath = () => {
+    if (import.meta.env.PROD) {
+      return "/arc-portfolio/basketball.png";
+    }
+    return "/basketball.png";
+  };
+
   return (
     <div
       ref={containerRef}
@@ -93,7 +101,7 @@ const ScrollParticles = () => {
       {balls.map((ball) => (
         <img
           key={ball.id}
-          src="./basketball.png"
+          src={getImagePath()}
           alt="Basketball"
           className={`absolute object-contain drop-shadow-lg cursor-pointer ${
             ball.bouncing ? "animate-bounce-pop" : ""

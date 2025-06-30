@@ -20,6 +20,14 @@ const ScrollBasketball = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Get the correct image path based on environment
+  const getImagePath = () => {
+    if (import.meta.env.PROD) {
+      return "/arc-portfolio/basketball.png";
+    }
+    return "/basketball.png";
+  };
+
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       {basketballs.map((ball) => {
@@ -38,7 +46,7 @@ const ScrollBasketball = () => {
             }}
           >
             <img
-              src="./basketball.png"
+              src={getImagePath()}
               alt="Basketball"
               className="w-12 h-12 object-contain"
             />

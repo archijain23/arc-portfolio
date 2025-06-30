@@ -20,12 +20,20 @@ const App = () => {
     }
   }, []);
 
+  // Get the basename dynamically based on environment
+  const getBasename = () => {
+    if (import.meta.env.PROD) {
+      return "/arc-portfolio";
+    }
+    return "";
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/arc-portfolio">
+        <BrowserRouter basename={getBasename()}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
